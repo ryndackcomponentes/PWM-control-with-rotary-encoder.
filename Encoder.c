@@ -55,10 +55,10 @@ return incremento;
 
 // Exibe na tela de um display LCD o duty cicle de um PWM determinado com um rotary encoder e manda esse PWM pro PB3.
 void calcula_PWM(int incremento){
-// D = duty cicle em percentual, duty = duty cicle, valor passado para o OCR2A para dutyrole do PWM, s_duty = string com o duty cicle em percentual para exibir no LCD.
-static uint8_t D;
-static uint8_t duty = 0;
-char s_duty[20];
+
+static uint8_t D;                    // D = duty cicle em percentual
+static uint8_t duty = 0;             // duty = duty cicle valor passado para o OCR2A para dutyrole do PWM
+char s_duty[20];                     // s_duty = string com o duty cicle em percentual para exibir no LCD.
 if (incremento){
             if(duty>10){
                 if(duty<245){
@@ -85,7 +85,7 @@ if (incremento){
             }
             D=100*duty/255;
             if(duty > 254){
-            sprintf(s_duty, "Duty: %d  Max    ", D);
+                sprintf(s_duty, "Duty: %d  Max    ", D);
             }
             else if(duty < 1){
                 sprintf(s_duty, "Duty: %d  Min    ", D);
