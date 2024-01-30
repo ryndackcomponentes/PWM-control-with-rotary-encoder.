@@ -43,12 +43,10 @@ static int8_t entradas[]= {0, -1, 1, 0, 1, 0, 0, -1, -1, 0, 0, 1, 0, 1, -1, 0}; 
     incremento += entradas[A_B & 0x0f];
 
 // Evita incrementos e decrementos descontrolados.
-    if(incremento>1){
+    if((incremento>1)||(incremento<-1)){
         incremento=0;
     }
-    if(incremento<-1){
-        incremento=0;
-    }
+    
     
 return incremento;
 }
