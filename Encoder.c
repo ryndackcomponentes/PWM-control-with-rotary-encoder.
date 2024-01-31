@@ -83,13 +83,13 @@ if (incremento){
             }
             D=100*duty/255;
             if(duty > 254){
-                sprintf(s_duty, "Duty: %d  Max    ", D);
+                sprintf(s_duty, "Duty: %d%%  Max    ", D);
             }
             else if(duty < 1){
-                sprintf(s_duty, "Duty: %d  Min    ", D);
+                sprintf(s_duty, "Duty: %d%%  Min    ", D);
             }
             else{
-                sprintf(s_duty, "Duty: %d         ", D);
+                sprintf(s_duty, "Duty: %d%%         ", D);
             }
             OCR2A = duty;
             LCD_move_cursor(0,0);
